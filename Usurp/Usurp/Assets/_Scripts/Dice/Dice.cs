@@ -30,6 +30,7 @@ public class Dice : MonoBehaviour
     #endregion
     private float TotalChance = 0;
     private float Roll;
+    private float Face;
 
 
     
@@ -70,39 +71,39 @@ public class Dice : MonoBehaviour
     {
         Roll = Random.Range(0, TotalChance);
 
-        Debug.Log(TotalChance + "    " + Roll);
-
       
         if(Roll <= Chance[0]){
             
                 diceDisplay.sprite = diceArt[0];
+                Face = 1;
         }
         else if(Roll <= Chance[1]){
             
                 diceDisplay.sprite = diceArt[1];
+                Face = 2;
         }
         else if(Roll <= Chance[2]){
             
                 diceDisplay.sprite = diceArt[2];
+                Face = 3;
 
         }
         else if(Roll <= Chance[3]){
             
                 diceDisplay.sprite = diceArt[3];
+                Face = 4;
 
         }
         else if(Roll <= Chance[4]){
             
                 diceDisplay.sprite = diceArt[4];
+                Face = 5;
 
         }
         else if(Roll <= Chance[5]){
             
                 diceDisplay.sprite = diceArt[5];
-        }
-        else
-        {
-            Debug.Log("ERROR");
+                Face = 6;
         }
 
 
@@ -124,7 +125,10 @@ public class Dice : MonoBehaviour
         }
     }
 
-
+    public float GetFace()
+    {
+        return Face;
+    }
 
 
 

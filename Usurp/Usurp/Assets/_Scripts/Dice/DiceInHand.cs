@@ -7,7 +7,7 @@ public class DiceInHand : MonoBehaviour
     #region Handsize
     [Space(10)]
     [Header("Hand Size")]
-    [SerializeField] private int handSize;
+    [SerializeField] private float handSize;
     #endregion
 
     #region Dice In Hand
@@ -43,6 +43,11 @@ public class DiceInHand : MonoBehaviour
     currentDice.Add(d1);
     }
    
+    }
+
+    public void SetHandSize(float no){
+
+        handSize += no;
     }
 
 }
