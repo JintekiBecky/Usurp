@@ -15,7 +15,7 @@ public class Dice : MonoBehaviour
     [Tooltip("Add the base chance for each side of the dice : 1 = Eye, 2 = Sword, 3 = Spear, 4 = Shield, 5 = Bomb , 6 = Plane")]
     [SerializeField] private float[] Chance = new float[6];
     #endregion
-    #region Tooltip
+    #region Modifers
     [Tooltip("Add the Chance modifers for each side of the dice This can be changed with SetModifier() : 1 = Eye, 2 = Sword, 3 = Spear, 4 = Shield, 5 = Bomb , 6 = Plane")]
     [SerializeField] private float[] Modifer = new float[6];
     #endregion
@@ -31,10 +31,15 @@ public class Dice : MonoBehaviour
     private float TotalChance = 0;
     private float Roll;
     private float Face;
+    [SerializeField] private DiceInHand diceInHand;
+    [SerializeField] private GameManager gameManager;
 
 
     
     void Start(){
+        
+        diceInHand = FindObjectOfType<DiceInHand>();
+        gameManager = FindObjectOfType<GameManager>();
         UpdateModifers();
         for (int i = 0;i < Chance.Length; i++)
         {
@@ -49,6 +54,13 @@ public class Dice : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if(gameManager.diceBonus)
+            {
+            
+            diceInHand.SetDiceActive(diceInHand.GetHandSize());
+            gameManager.diceBonus = false;
+            }
+            
             RollDice();
         }
     }

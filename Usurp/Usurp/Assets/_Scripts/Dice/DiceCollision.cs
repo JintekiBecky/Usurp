@@ -60,7 +60,7 @@ public class DiceCollision : MonoBehaviour
     {
         
         diceInHand = FindObjectOfType<DiceInHand>();
-        setDefaultColor();
+        setDefaultColor(activeColor);
         UpdateModifers();
         for (int i = 0;i < Chance.Length; i++)
         {
@@ -103,12 +103,13 @@ public class DiceCollision : MonoBehaviour
                         moveDice = other.GetComponent<MoveDice>();
                         if(moveDice.isHeld == false)
                         {
-                                other.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0);
+                                //other.transform.position = new Vector3(this.gameObject.transform.position.x, this.gameObject.transform.position.y, 0);
                                 display.color = deactiveColor;
                                 diceInHand.SetHandSize(-1);
-                                Destroy(other.gameObject);
+                                other.gameObject.SetActive(false);
                                 canHold = false;
                                 parentStructure.SetChildActive(childReferenceNo,false);
+                                parentStructure.CheckAllInActive();
                                
                         }
                         else
@@ -193,9 +194,15 @@ public class DiceCollision : MonoBehaviour
         }
     }
 
-    private void setDefaultColor()
+    public void setDefaultColor(Color color)
     {
         display = GetComponent<SpriteRenderer>();
-        display.color = activeColor;
+        display.color = color;
+    }
+
+    public int GetChildReferenceNo()
+    {
+
+        return childReferenceNo;
     }
 }

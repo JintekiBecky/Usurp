@@ -4,28 +4,81 @@ using UnityEngine;
 
 public class Structure : MonoBehaviour
 {
+
+    #region Parent Structure
+    [Space(10)]
+    [SerializeField] private Structure structure;
+    [SerializeField] private int tier;
+    #endregion
+    #region Childern Structure
+    [Space(10)]
+    [SerializeField] private Structure[] structures;
+    [SerializeField] private int noOfChildern;
+    [SerializeField] private bool[] isDestoryed;
+
+    #endregion 
     #region DiceTargets
+
     [Space(10)]
     [Header("Dice Targets")]
     [SerializeField] private GameObject[] DiceTargets = new GameObject[5];
     [SerializeField] private bool[] active = new bool[5];
     [SerializeField] private int noOfTargets;
-    #endregion
 
+    [SerializeField] private DiceCollision dice;
+    #endregion
     public int count = 0;
+    public Transform child;
+    public Collider2D collider;
+    [SerializeField] private int structureRefNo;
+    [SerializeField] private DiceInHand diceInHand;
+    
+    [SerializeField] private GameManager gameManager;
+
+    private bool iDestoryed = false;
+
     void Start ()
     {
-        for(int i = 0; i < noOfTargets; i++)
-        {
-            DiceTargets[i].SetActive(true);
-            active[i] = true;
+        
+        
+        gameManager = FindObjectOfType<GameManager>();
+        diceInHand = FindObjectOfType<DiceInHand>();
+        noOfChildern = structures.Length;
+        
+            for(int i = 0; i < noOfTargets; i++)
+            {
+                DiceTargets[i].SetActive(true);
+                active[i] = true;
 
-        }
+            }
 
-        for(int i = noOfTargets; i < DiceTargets.Length; i++)
+            for(int i = noOfTargets; i < DiceTargets.Length; i++)
+            {
+                DiceTargets[i].SetActive(false);
+                active[i] = false;
+            }
+        
+
+            switch(noOfChildern){
+                case 1:
+                isDestoryed = new bool[] {false};
+                break;
+                case 2:
+                isDestoryed = new bool[] {false,false};
+                break;
+                case 3:
+                isDestoryed = new bool[] {false,false,false};
+                break;
+            }
+
+        if(tier > 1)
         {
-            DiceTargets[i].SetActive(false);
-            active[i] = false;
+            for(int i = 0; i < noOfTargets; i++)
+            {
+                    SetChildActive(i, false);
+                    dice = DiceTargets[i].GetComponent<DiceCollision>();
+                    dice.setDefaultColor(Color.grey);
+            } 
         }
 
     }
@@ -33,16 +86,21 @@ public class Structure : MonoBehaviour
     {   
         if(Input.GetKeyDown(KeyCode.Space))
         {
-          //  CheckAllInActive();
+
+        //Debug.Log("SUCCESS");
         }
     }
+     
 
     public void SetChildActive(int refNO, bool condition)
     {
         active[refNO] = condition;
+        child = this.gameObject.transform.GetChild(refNO);
+        collider = child.GetComponent<Collider2D>();
+        collider.enabled = condition;
     }
 
-   /* private void CheckAllInActive()
+    public void CheckAllInActive()
     {   
         count = 0;
         for(int i = 0; i < noOfTargets; i++)
@@ -59,8 +117,57 @@ public class Structure : MonoBehaviour
         
         if (count == noOfTargets)
         {
+            isStructureDestoryed(structureRefNo);
+            
+            diceInHand.SetHandSize(noOfTargets);
+            gameManager.diceBonus = true;
             Debug.Log("STRUCTURE DESTROYED");
+            if(structure.CheckAllChildernDestroyed())
+            {   
+                structure.ActivateStructure();
+            }
         }
-    }*/
+    }
+    private bool CheckAllChildernDestroyed()
+    {
+        count = 0 ;
+        for(int i = 0;i < noOfChildern; i++)
+        {
+            if(isDestoryed[i] == true)
+            {
+                count++;
+            }
+        }
+        if(count == noOfChildern)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
 
-}
+    }
+
+    public void isStructureDestoryed(int refNO)
+    {
+        iDestoryed = true;
+        structure.childDestoryed(refNO);
+    }
+
+    public void childDestoryed(int refNO)
+    {
+        isDestoryed[refNO] = true;
+    }
+
+    public void ActivateStructure()
+    {
+        for(int i = 0;i < noOfTargets; i++)
+        {
+            SetChildActive(i, true);
+            dice = DiceTargets[i].GetComponent<DiceCollision>();
+            dice.setDefaultColor(Color.white);
+        }
+    }
+   
+   }

@@ -28,13 +28,15 @@ public class DiceInHand : MonoBehaviour
     [SerializeField] private float y_Start;
     [SerializeField] private float z_Start;
     #endregion
+
+    public int count = 0;
     // Start is called before the first frame update
     void Start ()
     {
         DrawDice();
     }
 
-    private void DrawDice(){
+    public void DrawDice(){
 
     for (int i = 0;i < handSize && i < columnLenght * rowLenght; i++)
    {
@@ -48,6 +50,36 @@ public class DiceInHand : MonoBehaviour
     public void SetHandSize(float no){
 
         handSize += no;
+        Debug.Log("handsize  " + handSize);
+    }
+
+    public float GetHandSize()
+    {
+        return handSize;
+    }
+
+    public void SetDiceActive( float handSize)
+    {
+        count = 0;
+        for(int i = 0;i < currentDice.Count; i++)
+        {
+        if(count <= handSize)
+        {
+            if(currentDice[i].activeInHierarchy)
+            {
+
+            }
+            else
+            {
+                count++;
+                currentDice[i].SetActive(true);
+            }
+        }
+        else
+        {
+            break;
+        }
+        }
     }
 
 }
