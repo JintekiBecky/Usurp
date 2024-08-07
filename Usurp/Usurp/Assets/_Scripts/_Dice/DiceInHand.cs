@@ -29,11 +29,16 @@ public class DiceInHand : MonoBehaviour
     [SerializeField] private float z_Start;
     #endregion
 
+    [SerializeField] private Cavalry cavalry;
+
+    public Dice redice;
     public int count = 0;
     // Start is called before the first frame update
     void Start ()
     {
         DrawDice();
+        cavalry = FindObjectOfType<Cavalry>();
+
     }
 
     public void DrawDice(){
@@ -79,6 +84,19 @@ public class DiceInHand : MonoBehaviour
         {
             break;
         }
+        }
+    }
+
+    public void ReRollDice()
+    {
+        
+        cavalry.SetCavalryCounter(cavalry.GetCavalryCounter() - 1);
+        for(int i = 0;i < currentDice.Count; i++)
+        {
+            
+            redice = currentDice[i].GetComponent<Dice>();
+            redice.RollDice();
+
         }
     }
 

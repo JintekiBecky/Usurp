@@ -43,7 +43,7 @@ public class Dice : MonoBehaviour
         UpdateModifers();
         for (int i = 0;i < Chance.Length; i++)
         {
-        CalculateChance(i);
+            CalculateChance(i);
         }
         
         CalculateTotalChance();
@@ -67,20 +67,19 @@ public class Dice : MonoBehaviour
     private void CalculateChance(int no)
     {
        
-
         Chance[no] += Chance[no] * Modifer[no] / 100;
         if(no !=0)
         Chance[no]+= Chance[no-1];
-        
-        
+         
     }
 
     private void CalculateTotalChance()
     {
             TotalChance = Chance[5];
     }
-    private void RollDice()
+    public void RollDice()
     {
+        
         Roll = Random.Range(0, TotalChance);
 
       
