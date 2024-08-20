@@ -5,6 +5,7 @@ using UnityEngine;
 public class Structure : MonoBehaviour
 {
 
+    public bool destory = false;
     #region Parent Structure
     [Space(10)]
     [SerializeField] private Structure structure;
@@ -21,6 +22,7 @@ public class Structure : MonoBehaviour
 
     [Space(10)]
     [Header("Dice Targets")]
+    [SerializeField] public int structureLevel;
     [SerializeField] private GameObject[] DiceTargets = new GameObject[5];
     [SerializeField] private bool[] active = new bool[5];
     [SerializeField] private int noOfTargets;
@@ -71,7 +73,8 @@ public class Structure : MonoBehaviour
                 break;
             }
 
-        if(tier > 1)
+    
+        if(!(structures.Length==0))
         {
             for(int i = 0; i < noOfTargets; i++)
             {
@@ -83,12 +86,8 @@ public class Structure : MonoBehaviour
 
     }
     void Update ()
-    {   
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
+    {  
 
-        //Debug.Log("SUCCESS");
-        }
     }
      
 
@@ -122,6 +121,7 @@ public class Structure : MonoBehaviour
             diceInHand.SetHandSize(noOfTargets);
             gameManager.diceBonus = true;
             Debug.Log("STRUCTURE DESTROYED");
+            destory = true;
             if(structure.CheckAllChildernDestroyed())
             {   
                 structure.ActivateStructure();
@@ -151,6 +151,7 @@ public class Structure : MonoBehaviour
 
     public void isStructureDestoryed(int refNO)
     {
+        Debug.Log("" + refNO);
         iDestoryed = true;
         structure.childDestoryed(refNO);
     }

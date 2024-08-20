@@ -29,16 +29,32 @@ public class DiceInHand : MonoBehaviour
     [SerializeField] private float z_Start;
     #endregion
 
+    [Space(10)]
     [SerializeField] private Cavalry cavalry;
-
     public Dice redice;
     public int count = 0;
-    // Start is called before the first frame update
+
+
+      void OnEnable()
+    {
+        EventManager.OnClicked += ReRoll;
+    }
+
+    void OnDisable()
+    {
+        EventManager.OnClicked -= ReRoll;
+    }
+
     void Start ()
     {
         DrawDice();
         cavalry = FindObjectOfType<Cavalry>();
 
+    }
+
+      void ReRoll()
+    {
+        ReRollDice();
     }
 
     public void DrawDice(){
@@ -91,6 +107,7 @@ public class DiceInHand : MonoBehaviour
     {
         
         cavalry.SetCavalryCounter(cavalry.GetCavalryCounter() - 1);
+        SetDiceActive(handSize);
         for(int i = 0;i < currentDice.Count; i++)
         {
             

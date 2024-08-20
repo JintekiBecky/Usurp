@@ -42,6 +42,7 @@ public class DiceCollision : MonoBehaviour
     [Header("Parent Structure")]
     
     [SerializeField] private Structure parentStructure;
+    [SerializeField] private Structure currentStructure;
     [SerializeField] private int childReferenceNo;
     #endregion
 
