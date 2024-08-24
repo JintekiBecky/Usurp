@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour
     
     void OnGUI()
     {
-        if(GUI.Button(new Rect(Screen.width / 2 - 50, 1010, 100, 30), "ReRoll"))
+        if(GUI.Button(new Rect(Screen.width / 2 - 50, 910, 100, 30), "ReRoll"))
         {
             if (OnClicked != null)
             OnClicked();
