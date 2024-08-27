@@ -12,7 +12,7 @@ public class Cavalry : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         diceInHand = FindObjectOfType<DiceInHand>();
-        cavalryCounter = (int)((diceInHand.GetHandSize() / 2) + diceInHand.GetHandSize());
+        //cavalryCounter = (int)((diceInHand.GetHandSize() / 2) + diceInHand.GetHandSize());
         SetCavalryCounter(cavalryCounter);
     }
 
