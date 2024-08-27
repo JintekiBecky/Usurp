@@ -49,6 +49,15 @@ SpriteAtlas:
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: 1229705711
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: 2003078570
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: 1447456561
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: 578738487
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: 1049983507
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: -1228398403
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: 369222119
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: 1377657348
+    - 1c5e97b555d4b584bafa4d8cd838bb8e: -2145847135
     - 162f823659b88a244ae28e506f5ce7d6: -1138813813
     - 162f823659b88a244ae28e506f5ce7d6: -2063214198
     - 162f823659b88a244ae28e506f5ce7d6: -995883320
@@ -93,6 +102,15 @@ SpriteAtlas:
     - bc4e2fd620542cd4ebd365e3134d09ef: -1747961888
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 1229705711, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: 2003078570, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: 1447456561, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: 578738487, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: 1049983507, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: -1228398403, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: 369222119, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: 1377657348, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
+  - {fileID: -2145847135, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
   - {fileID: -1138813813, guid: 162f823659b88a244ae28e506f5ce7d6, type: 3}
   - {fileID: -2063214198, guid: 162f823659b88a244ae28e506f5ce7d6, type: 3}
   - {fileID: -995883320, guid: 162f823659b88a244ae28e506f5ce7d6, type: 3}
@@ -136,6 +154,15 @@ SpriteAtlas:
   - {fileID: -1879722759, guid: bc4e2fd620542cd4ebd365e3134d09ef, type: 3}
   - {fileID: -1747961888, guid: bc4e2fd620542cd4ebd365e3134d09ef, type: 3}
   m_PackedSpriteNamesToIndex:
+  - ForestFoliage_4
+  - ForestFoliage_6
+  - ForestFoliage_7
+  - ForestFoliage_0
+  - ForestFoliage_1
+  - ForestFoliage_2
+  - ForestFoliage_3
+  - ForestFoliage_11
+  - ForestFoliage_10
   - placeholderfloor2_7
   - placeholderfloor2_6
   - placeholderfloor2_5
