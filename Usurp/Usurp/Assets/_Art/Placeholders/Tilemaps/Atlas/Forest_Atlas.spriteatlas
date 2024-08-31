@@ -102,6 +102,8 @@ SpriteAtlas:
     - bc4e2fd620542cd4ebd365e3134d09ef: -1747961888
     - f0dfa9b807c51204094b9f339bea048d: 5121866727092033486
     - f0dfa9b807c51204094b9f339bea048d: -8866732654944642807
+    - f0dfa9b807c51204094b9f339bea048d: -1219975412392839841
+    - f0dfa9b807c51204094b9f339bea048d: -3647945197179896649
     - f0dfa9b807c51204094b9f339bea048d: 3079913671077376763
     - f0dfa9b807c51204094b9f339bea048d: -3295707251743795054
     - f0dfa9b807c51204094b9f339bea048d: 1820545890859981990
@@ -167,6 +169,8 @@ SpriteAtlas:
   - {fileID: -1747961888, guid: bc4e2fd620542cd4ebd365e3134d09ef, type: 3}
   - {fileID: 5121866727092033486, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
   - {fileID: -8866732654944642807, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: -1219975412392839841, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: -3647945197179896649, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
   - {fileID: 3079913671077376763, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
   - {fileID: -3295707251743795054, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
   - {fileID: 1820545890859981990, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
@@ -231,6 +235,8 @@ SpriteAtlas:
   - town structures-Recovered_23
   - town structures-Recovered_11
   - town structures-Recovered_10
+  - town structures-Recovered_13
+  - town structures-Recovered_12
   - town structures-Recovered_6
   - town structures-Recovered_7
   - town structures-Recovered_4
