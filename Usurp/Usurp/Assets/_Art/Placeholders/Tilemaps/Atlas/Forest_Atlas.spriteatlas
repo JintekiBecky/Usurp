@@ -100,6 +100,18 @@ SpriteAtlas:
     - bc4e2fd620542cd4ebd365e3134d09ef: 1211120157
     - bc4e2fd620542cd4ebd365e3134d09ef: -1879722759
     - bc4e2fd620542cd4ebd365e3134d09ef: -1747961888
+    - f0dfa9b807c51204094b9f339bea048d: 5121866727092033486
+    - f0dfa9b807c51204094b9f339bea048d: -8866732654944642807
+    - f0dfa9b807c51204094b9f339bea048d: 3079913671077376763
+    - f0dfa9b807c51204094b9f339bea048d: -3295707251743795054
+    - f0dfa9b807c51204094b9f339bea048d: 1820545890859981990
+    - f0dfa9b807c51204094b9f339bea048d: -1116667939392608721
+    - f0dfa9b807c51204094b9f339bea048d: 4079322718700764616
+    - f0dfa9b807c51204094b9f339bea048d: 7168453242739889382
+    - f0dfa9b807c51204094b9f339bea048d: -9094626984013306029
+    - f0dfa9b807c51204094b9f339bea048d: 8085387795967516366
+    - f0dfa9b807c51204094b9f339bea048d: 7001521040487819617
+    - f0dfa9b807c51204094b9f339bea048d: -2504411446471261262
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 1229705711, guid: 1c5e97b555d4b584bafa4d8cd838bb8e, type: 3}
@@ -153,6 +165,18 @@ SpriteAtlas:
   - {fileID: 1211120157, guid: bc4e2fd620542cd4ebd365e3134d09ef, type: 3}
   - {fileID: -1879722759, guid: bc4e2fd620542cd4ebd365e3134d09ef, type: 3}
   - {fileID: -1747961888, guid: bc4e2fd620542cd4ebd365e3134d09ef, type: 3}
+  - {fileID: 5121866727092033486, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: -8866732654944642807, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: 3079913671077376763, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: -3295707251743795054, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: 1820545890859981990, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: -1116667939392608721, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: 4079322718700764616, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: 7168453242739889382, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: -9094626984013306029, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: 8085387795967516366, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: 7001521040487819617, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
+  - {fileID: -2504411446471261262, guid: f0dfa9b807c51204094b9f339bea048d, type: 3}
   m_PackedSpriteNamesToIndex:
   - ForestFoliage_4
   - ForestFoliage_6
@@ -205,6 +229,18 @@ SpriteAtlas:
   - town structures-Recovered_21
   - town structures-Recovered_22
   - town structures-Recovered_23
+  - town structures-Recovered_11
+  - town structures-Recovered_10
+  - town structures-Recovered_6
+  - town structures-Recovered_7
+  - town structures-Recovered_4
+  - town structures-Recovered_5
+  - town structures-Recovered_2
+  - town structures-Recovered_3
+  - town structures-Recovered_0
+  - town structures-Recovered_1
+  - town structures-Recovered_8
+  - town structures-Recovered_9
   m_RenderDataMap: {}
   m_Tag: Forest_Atlas
   m_IsVariant: 0
