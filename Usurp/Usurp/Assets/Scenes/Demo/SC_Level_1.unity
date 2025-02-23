@@ -15181,17 +15181,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8443389303366983873, guid: 5163e1139e50a694a8cec9e6ae4f2099, type: 3}
   m_PrefabInstance: {fileID: 5659031499388548974}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1115882406 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5670859508629669284, guid: 5163e1139e50a694a8cec9e6ae4f2099, type: 3}
-  m_PrefabInstance: {fileID: 5659031499388548974}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115882405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b57ab89229f53dc4b85284505dad4084, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1115882408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18479,10 +18468,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8534373539752162352, guid: 3f60b09e446b9fe4d99694e64ced4669, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1115882406}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
