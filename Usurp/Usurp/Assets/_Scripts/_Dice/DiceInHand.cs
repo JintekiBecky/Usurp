@@ -35,7 +35,7 @@ public class DiceInHand : MonoBehaviour
     public int count = 0;
 
 
-      void OnEnable()
+    /*  void OnEnable()
     {
         EventManager.OnClicked += ReRoll;
     }
@@ -43,7 +43,7 @@ public class DiceInHand : MonoBehaviour
     void OnDisable()
     {
         EventManager.OnClicked -= ReRoll;
-    }
+    }*/
 
     void Start ()
     {
@@ -52,7 +52,7 @@ public class DiceInHand : MonoBehaviour
 
     }
 
-      void ReRoll()
+      public void ReRoll()
     {
         ReRollDice();
     }

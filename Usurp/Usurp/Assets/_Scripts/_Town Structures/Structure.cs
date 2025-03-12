@@ -22,7 +22,6 @@ public class Structure : MonoBehaviour
 
     [Space(10)]
     [Header("Dice Targets")]
-    [SerializeField] public int structureLevel;
     [SerializeField] private GameObject[] DiceTargets = new GameObject[5];
     [SerializeField] private bool[] active = new bool[5];
     [SerializeField] private int noOfTargets;

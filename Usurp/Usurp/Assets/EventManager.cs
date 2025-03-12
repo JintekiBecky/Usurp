@@ -1,19 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EventManager : MonoBehaviour
 {
-    public delegate void ClickAction();
-    public static event ClickAction OnClicked;
+    //public delegate void ClickAction();
+   // public static event ClickAction OnClicked;
+    public UnityEvent ReRollButtonClicked;
+
+    public void ButtonClicked()
+    {
+        ReRollButtonClicked.Invoke();
+    }
     
-    void OnGUI()
+    /*void OnGUI()
     {
         if(GUI.Button(new Rect(Screen.width / 2 - 50, 910, 100, 30), "ReRoll"))
         {
             if (OnClicked != null)
             OnClicked();
         }
-    }
+    }*/
 
 }

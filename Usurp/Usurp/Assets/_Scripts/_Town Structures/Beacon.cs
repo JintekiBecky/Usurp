@@ -31,7 +31,7 @@ public class Beacon : MonoBehaviour
      private SpriteRenderer display;
      private int temp = 0;
 
-    void OnEnable()
+    /*void OnEnable()
     {
         EventManager.OnClicked += ReRoll;
     }
@@ -39,7 +39,7 @@ public class Beacon : MonoBehaviour
     void OnDisable()
     {
         EventManager.OnClicked -= ReRoll;
-    }
+    }*/
 
     void Start()
     {
