@@ -98,9 +98,9 @@ public class Structure : MonoBehaviour
         collider.enabled = condition;
     }
 
-    public void CheckAllInActive()
-    {   
-        count = 0;
+ public bool CheckIfAllTargetsDestroyed()
+ {
+    count = 0;
         for(int i = 0; i < noOfTargets; i++)
         {
             if(active[i])
@@ -112,8 +112,21 @@ public class Structure : MonoBehaviour
                 count++;
             }
         }
-        
         if (count == noOfTargets)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+ }
+    public void CheckAllInActive()
+    {   
+        
+        
+        if (CheckIfAllTargetsDestroyed())
         {
             isStructureDestoryed(structureRefNo);
             
@@ -127,12 +140,13 @@ public class Structure : MonoBehaviour
             }
         }
     }
+
     private bool CheckAllChildernDestroyed()
     {
         count = 0 ;
         for(int i = 0;i < noOfChildern; i++)
         {
-            if(isDestoryed[i] == true)
+            if(isDestoryed[i] == true) 
             {
                 count++;
             }
@@ -145,6 +159,23 @@ public class Structure : MonoBehaviour
         {
             return false;
         }
+
+    }
+
+    public float CheckNoOfDestroyed() // Check how many Targets in this particular structure are destroyed
+    {
+        count = 0;
+        for(int i = 0; i < noOfTargets; i++)
+        {
+            Debug.Log("No of Targets " + noOfTargets);
+            if(active[i] == false)
+            {
+                count++;
+                Debug.Log("Count =" + count);
+            }
+        }
+
+        return count;
 
     }
 
@@ -168,6 +199,20 @@ public class Structure : MonoBehaviour
             dice = DiceTargets[i].GetComponent<DiceCollision>();
             dice.setDefaultColor(Color.white);
         }
+    }
+
+    public int ReturnTier()
+    {
+        return tier;
+    }
+    public int GetstructureRefNo()
+    {
+        return structureRefNo;
+    }
+
+    public int GetnoOfTargets()
+    {
+        return noOfTargets;
     }
    
    }

@@ -15,19 +15,6 @@ public class Beacon : MonoBehaviour
     [SerializeField]private Color activeColor = Color.red;
     [SerializeField]private Color deactiveColor = Color.grey;
 
-
-     #region Grid dimensions for Countdown Display
-    [Space(10)]
-    [Header("UI Height")]
-    [SerializeField] private int columnLenght;
-    [SerializeField] private int rowLenght;
-    [SerializeField] private float x_Space;
-    [SerializeField] private float y_Space;
-    [SerializeField] private float x_Start;
-    [SerializeField] private float y_Start;
-    [SerializeField] private float z_Start;
-    #endregion
-
      private SpriteRenderer display;
      private int temp = 0;
 
@@ -45,7 +32,7 @@ public class Beacon : MonoBehaviour
     {
         structure = this.GetComponent<Structure>();
         cavalry = FindObjectOfType<Cavalry>();
-        countdown = 7 - structure.structureLevel;
+        countdown = 7 - structure.ReturnTier();
         StartCountdown(countdown);
     }
 
@@ -101,7 +88,7 @@ public class Beacon : MonoBehaviour
     private void ResetCountdown()
     {
             temp = 0;
-            countdown = 7 - structure.structureLevel; 
+            countdown = 7 - structure.ReturnTier(); 
             for(int i = 0; i < countdown;i++)
             {
                
