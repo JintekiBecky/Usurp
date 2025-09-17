@@ -6,28 +6,31 @@ public class Structure : MonoBehaviour
 {
 
     public bool destory = false;
-    #region Parent Structure
+    // structures above this one (This needs to be destoryed to activate the other one)
+    #region Parent Structure    
     [Space(10)]
     [SerializeField] private Structure structure;
     [SerializeField] private int tier;
     #endregion
+
+    // structures  under this one (The other one needs to be destoryed to activate this one)
     #region Childern Structure
     [Space(10)]
     [SerializeField] private Structure[] structures;
     [SerializeField] private int noOfChildern;
     [SerializeField] private bool[] isDestoryed;
-
     #endregion 
-    #region DiceTargets
 
+    #region DiceTargets
     [Space(10)]
     [Header("Dice Targets")]
     [SerializeField] private GameObject[] DiceTargets = new GameObject[5];
     [SerializeField] private bool[] active = new bool[5];
     [SerializeField] private int noOfTargets;
-
     [SerializeField] private DiceCollision dice;
     #endregion
+
+
     public int count = 0;
     public Transform child;
     public Collider2D collider;
